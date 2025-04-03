@@ -25,9 +25,7 @@
 		background-color: var(--color-border);
 	}
 
-	&:not(:last-child) {
-		margin-bottom: to-rem(64);
-	}
+	margin-bottom: to-rem(64);
 }
 
 .search:has(.input:focus) {
@@ -35,7 +33,7 @@
 }
 
 .input {
-	width: to-rem(300);
+	width: fluid(400, 200, 768, 320);
 	height: to-rem(44);
 	background-color: transparent;
 

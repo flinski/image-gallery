@@ -4,5 +4,5 @@
 	max-width: calc(var(--container-width) + 2 * var(--container-padding-x));
 	margin-inline: auto;
 	padding-inline: var(--container-padding-x);
-	padding-block: to-rem(100);
+	padding-top: to-rem(100);
 }

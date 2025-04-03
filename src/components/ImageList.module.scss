@@ -1,0 +1,7 @@
+@use "../styles/helpers" as *;
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: to-rem(4);
+}
