@@ -1,0 +1,69 @@
+@use "../styles/helpers" as *;
+
+.header {
+	text-align: center;
+}
+
+.title {
+	font-size: to-rem(96);
+	font-weight: 700;
+	line-height: 1.5;
+
+	&:not(:last-child) {
+		margin-bottom: to-rem(64);
+	}
+}
+
+.search {
+	display: inline-flex;
+	justify-content: center;
+	background-color: var(--color-layout);
+	border-radius: to-rem(999);
+	border: to-rem(1) solid var(--color-border);
+
+	@include hover {
+		background-color: var(--color-border);
+	}
+
+	&:not(:last-child) {
+		margin-bottom: to-rem(64);
+	}
+}
+
+.search:has(.input:focus) {
+	background-color: var(--color-bg);
+}
+
+.input {
+	width: to-rem(300);
+	height: to-rem(44);
+	background-color: transparent;
+
+	&:focus {
+		outline: none;
+	}
+
+	&::placeholder {
+		color: var(--color-text-alt);
+	}
+}
+
+.btnGlass,
+.btnCross {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-inline: to-rem(16);
+	color: var(--color-text-alt);
+	background-color: transparent;
+
+	@include hover {
+		color: var(--color-text);
+	}
+
+	svg {
+		flex-shrink: 0;
+		width: to-rem(20);
+		height: to-rem(20);
+	}
+}
