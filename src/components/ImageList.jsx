@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // config
-import { ACCESS_KEY, BASE_URL } from "../config";
+import { ACCESS_KEY, BASE_URL, imagesPerPage } from "../config";
 // components
 import Image from "./Image";
 import Loader from "./Loader";
@@ -15,7 +15,9 @@ export default function ImageList({ query }) {
 		async function fetchPhotos() {
 			try {
 				setIsLoading(true);
-				const response = await fetch(`${BASE_URL}/search/photos/?client_id=${ACCESS_KEY}&query=${query}&per_page=18`);
+				const response = await fetch(
+					`${BASE_URL}/search/photos/?client_id=${ACCESS_KEY}&query=${query}&per_page=${imagesPerPage}`,
+				);
 				const data = await response.json();
 				console.log(data);
 				setImages(data.results);
@@ -30,9 +32,15 @@ export default function ImageList({ query }) {
 
 	return (
 		<main>
-			<ul className={styles.list}>
-				{isLoading ? <Loader /> : images.map((image) => <Image key={image.id} image={image} />)}
-			</ul>
+			{isLoading ? (
+				<Loader />
+			) : (
+				<ul className={styles.list}>
+					{images.map((image) => (
+						<Image key={image.id} image={image} />
+					))}
+				</ul>
+			)}
 		</main>
 	);
 }
