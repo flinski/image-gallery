@@ -20,12 +20,11 @@
 	background-color: var(--color-layout);
 	border-radius: to-rem(999);
 	border: to-rem(1) solid var(--color-border);
+	margin-bottom: to-rem(64);
 
 	@include hover {
 		background-color: var(--color-border);
 	}
-
-	margin-bottom: to-rem(64);
 }
 
 .search:has(.input:focus) {

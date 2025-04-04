@@ -23,4 +23,8 @@
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+
+	&:global(.is-loading) {
+		background-color: var(--color-layout);
+	}
 }
