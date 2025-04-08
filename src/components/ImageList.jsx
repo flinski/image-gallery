@@ -30,7 +30,7 @@ export default function ImageList({ query, page, setTotal, setTotalPages }) {
 			}
 		}
 		fetchPhotos();
-	}, [query, setTotal, setTotalPages]);
+	}, [query, page, setTotal, setTotalPages]);
 
 	return (
 		<main>

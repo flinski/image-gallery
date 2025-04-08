@@ -1,0 +1,34 @@
+@use "../styles/helpers" as *;
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: to-rem(8);
+	line-height: 1.5;
+	padding-block: to-rem(16);
+
+	button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: to-rem(36);
+		aspect-ratio: 1;
+		background-color: transparent;
+		border: to-rem(1) solid var(--color-text);
+		border-radius: to-rem(10);
+		transition: all var(--transition-duration) ease 0s;
+
+		@include hover {
+			color: var(--color-bg);
+			background-color: var(--color-text);
+		}
+
+		&[disabled] {
+			color: var(--color-text-alt);
+			background-color: transparent;
+			border-color: var(--color-text-alt);
+			cursor: not-allowed;
+		}
+	}
+}

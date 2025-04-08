@@ -4,9 +4,10 @@ import { initialQuery } from "../config.js";
 // components
 import Container from "./Container";
 import Header from "./Header";
-import ImageList from "./ImageList.jsx";
+import ImageList from "./ImageList";
 import Footer from "./Footer";
-import Stats from "./Stats.jsx";
+import Stats from "./Stats";
+import Pagination from "./Pagination";
 
 export default function App() {
 	const [query, setQuery] = useState(initialQuery);
@@ -19,6 +20,7 @@ export default function App() {
 			<Header setQuery={setQuery} />
 			<Stats page={page} total={total} totalPages={totalPages} />
 			<ImageList query={query} page={page} setTotal={setTotal} setTotalPages={setTotalPages} />
+			<Pagination page={page} totalPages={totalPages} setPage={setPage} />
 			<Footer />
 		</Container>
 	);
