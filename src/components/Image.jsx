@@ -13,7 +13,7 @@ export default function Image({ image }) {
 		<li className={styles.item}>
 			<img
 				className={`${styles.image} ${!loaded ? "is-loading" : ""}`}
-				src={image.urls.regular}
+				src={image.urls.small}
 				alt={image.alt_description}
 				onLoad={handleLoadImage}
 			/>

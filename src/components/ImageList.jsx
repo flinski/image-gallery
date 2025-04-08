@@ -7,7 +7,7 @@ import Loader from "./Loader";
 // styles
 import styles from "./ImageList.module.scss";
 
-export default function ImageList({ query }) {
+export default function ImageList({ query, page, setTotal, setTotalPages }) {
 	const [images, setImages] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -16,11 +16,13 @@ export default function ImageList({ query }) {
 			try {
 				setIsLoading(true);
 				const response = await fetch(
-					`${BASE_URL}/search/photos/?client_id=${ACCESS_KEY}&query=${query}&per_page=${imagesPerPage}`,
+					`${BASE_URL}/search/photos/?client_id=${ACCESS_KEY}&query=${query}&page=${page}&per_page=${imagesPerPage}`,
 				);
 				const data = await response.json();
 				console.log(data);
 				setImages(data.results);
+				setTotal(data.total);
+				setTotalPages(data.total_pages);
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -28,7 +30,7 @@ export default function ImageList({ query }) {
 			}
 		}
 		fetchPhotos();
-	}, [query]);
+	}, [query, setTotal, setTotalPages]);
 
 	return (
 		<main>

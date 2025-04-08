@@ -21,6 +21,7 @@
 	border-radius: to-rem(999);
 	border: to-rem(1) solid var(--color-border);
 	margin-bottom: to-rem(64);
+	transition: all var(--transition-duration) ease 0s;
 
 	@include hover {
 		background-color: var(--color-border);
