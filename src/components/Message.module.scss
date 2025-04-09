@@ -1,0 +1,8 @@
+@use "../styles/helpers" as *;
+
+.message {
+	flex: 1 1 auto;
+	line-height: 1.5;
+	text-align: center;
+	margin-block: to-rem(16);
+}

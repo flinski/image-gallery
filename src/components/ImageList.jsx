@@ -4,6 +4,7 @@ import { ACCESS_KEY, BASE_URL, imagesPerPage } from "../config";
 // components
 import Image from "./Image";
 import Loader from "./Loader";
+import Message from "./Message";
 // styles
 import styles from "./ImageList.module.scss";
 
@@ -38,9 +39,7 @@ export default function ImageList({ query, page, setTotal, setTotalPages }) {
 				<Loader />
 			) : (
 				<ul className={styles.list}>
-					{images.map((image) => (
-						<Image key={image.id} image={image} />
-					))}
+					{images.length === 0 ? <Message /> : images.map((image) => <Image key={image.id} image={image} />)}
 				</ul>
 			)}
 		</main>

@@ -1,6 +1,7 @@
 @use "../styles/helpers" as *;
 
 .pagination {
+	flex: 1 0 auto;
 	display: flex;
 	justify-content: center;
 	gap: to-rem(8);
