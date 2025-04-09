@@ -2,7 +2,7 @@ import { useRef } from "react";
 // styles
 import styles from "./Header.module.scss";
 
-export default function Header({ setQuery }) {
+export default function Header({ setQuery, setPage }) {
 	const inputRef = useRef("");
 
 	function handleSubmitForm(e) {
@@ -11,11 +11,12 @@ export default function Header({ setQuery }) {
 			return;
 		}
 		setQuery(inputRef.current.value);
+		setPage(1);
 	}
 
 	function handleClearInput() {
 		inputRef.current.value = "";
-		inputRef.current.focus();
+		// inputRef.current.focus();
 	}
 
 	return (
@@ -33,7 +34,7 @@ export default function Header({ setQuery }) {
 						/>
 					</svg>
 				</button>
-				<input className={styles.input} type="text" placeholder="Search..." ref={inputRef} />
+				<input className={styles.input} type="text" placeholder="Search..." size="1" ref={inputRef} />
 				<button className={styles.btnCross} type="button" onClick={handleClearInput}>
 					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path

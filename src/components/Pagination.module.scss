@@ -5,7 +5,7 @@
 	justify-content: center;
 	gap: to-rem(8);
 	line-height: 1.5;
-	padding-block: to-rem(16);
+	padding-top: to-rem(16);
 
 	button {
 		display: inline-flex;
@@ -32,3 +32,15 @@
 		}
 	}
 }
+
+.btnPrevious {
+	svg {
+		transform: translate(-1px);
+	}
+}
+
+// .btnNext {
+// 	svg {
+// 		transform: translate(1px);
+// 	}
+// }

@@ -33,7 +33,7 @@ export default function ImageList({ query, page, setTotal, setTotalPages }) {
 	}, [query, page, setTotal, setTotalPages]);
 
 	return (
-		<main>
+		<main className={styles.main}>
 			{isLoading ? (
 				<Loader />
 			) : (

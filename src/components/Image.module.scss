@@ -4,13 +4,38 @@
 	--columns: 3;
 	position: relative;
 	flex: 0 0 calc((100% - (var(--columns) - 1) * 4px) / var(--columns));
-	aspect-ratio: 1 / 1;
+	height: to-rem(330);
 
-	@media (width < to-em(768)) {
+	&:hover {
+		&::before {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.link {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: hsl(0, 0%, 0%, 50%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all var(--transition-duration) ease 0s;
+	}
+
+	@media (width < to-em(1030)) {
 		--columns: 2;
 	}
 
-	@media (width < to-em(481)) {
+	@media (width < to-em(680)) {
 		--columns: 1;
 	}
 }
@@ -26,5 +51,29 @@
 
 	&:global(.is-loading) {
 		background-color: var(--color-layout);
+	}
+}
+
+.link {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: to-rem(40);
+	height: to-rem(40);
+	opacity: 0;
+	visibility: hidden;
+	color: var(--color-text);
+	background-color: var(--color-layout);
+	border: var(--border);
+	border-radius: to-rem(10);
+	transition: all var(--transition-duration) ease 0s;
+
+	&:visited {
+		color: currentColor;
 	}
 }

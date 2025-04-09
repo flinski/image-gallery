@@ -17,7 +17,7 @@ export default function App() {
 
 	return (
 		<Container>
-			<Header setQuery={setQuery} />
+			<Header setQuery={setQuery} setPage={setPage} />
 			<Stats page={page} total={total} totalPages={totalPages} />
 			<ImageList query={query} page={page} setTotal={setTotal} setTotalPages={setTotalPages} />
 			<Pagination page={page} totalPages={totalPages} setPage={setPage} />

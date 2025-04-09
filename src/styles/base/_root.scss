@@ -20,7 +20,11 @@
 
 	--transition-duration: 0.2s;
 
-	@media (width < to-em(768)) {
-		--container-width: #{to-rem(600)};
+	@media (width < to-em(1030)) {
+		--container-width: #{to-rem(664)};
+	}
+
+	@media (width < to-em(680)) {
+		--container-width: #{to-rem(330)};
 	}
 }

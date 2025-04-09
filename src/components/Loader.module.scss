@@ -7,11 +7,12 @@
 }
 
 .loader {
-	width: to-rem(24);
-	height: to-rem(24);
+	width: to-rem(48);
+	height: to-rem(48);
+	border: to-rem(5) solid var(--color-text-alt);
+	border-bottom-color: transparent;
 	border-radius: 50%;
-	border-top: to-rem(3) solid var(--color-text-alt);
-	border-right: to-rem(3) solid transparent;
+	display: inline-block;
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
 }
